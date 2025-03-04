@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Md. Al Arshad Arafin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .about-section h2 {
+            color: var(--link-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-section {
+            margin-top: 2rem;
+        }
+
+        .skills-section h2 {
+            color: #60a5fa;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: var(--link-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-card i {
+            color: var(--link-color);
+            font-size: 1.2rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .skill-card li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card li i {
+            color: var(--link-color);
+            font-size: 0.9rem;
+        }
+
+        .education-section {
+            margin-top: 2rem;
+        }
+
+        .education-item {
+            border-left: 3px solid var(--link-color);
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: var(--link-color);
+            border-radius: 50%;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .research-interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-card i {
+            font-size: 2rem;
+            color: var(--link-color);
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3 {
+            color: var(--link-color);
+            margin-bottom: 1rem;
+        }
+
+        .research-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <button class="theme-switch" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <header>
+            <h1>About Me</h1>
+        </header>
+
+        <main class="content">
+            <section class="about-section">
+                <h2>Who Am I</h2>
+                <p>I am a passionate Computer Science student at BRAC University, with a keen interest in software development and problem-solving. My journey in technology began with a curiosity about how things work in the digital world, and it has evolved into a dedicated pursuit of excellence in computer science.</p>
+                
+                <h2>My Journey</h2>
+                <p>Throughout my academic career, I've been involved in various projects that have helped me develop a strong foundation in both theoretical concepts and practical applications. I believe in continuous learning and staying updated with the latest technological advancements.</p>
+
+                <div class="education-section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>BSc in Computer Science & Engineering</h3>
+                        <p>BRAC University | 2022 - Present</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Higher Secondary Certificate</h3>
+                        <p>Millenium Scholactic School & College | 2019 - 2021</p>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h3><i class="fas fa-code"></i>Programming Languages</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i>Java</li>
+                                <li><i class="fas fa-check"></i>Python</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <h3><i class="fas fa-database"></i>Databases</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i>MySQL</li>
+                                <li><i class="fas fa-check"></i>SQLite</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <h3><i class="fas fa-server"></i>Web Development</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i>HTML</li>
+                                <li><i class="fas fa-check"></i>CSS</li>
+                                <li><i class="fas fa-check"></i>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <h3><i class="fas fa-tools"></i>Tools & Technologies</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i>Git</li>
+                                <li><i class="fas fa-check"></i>Linux</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="research-section">
+                    <h2>Research Interests</h2>
+                    <div class="research-interests">
+                        <div class="research-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Cybersecurity</h3>
+                            <p>Exploring advanced security measures and threat detection systems</p>
+                        </div>
+                        <div class="research-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>Human-Computer Interaction</h3>
+                            <p>Studying ways to make technology more intuitive and accessible</p>
+                        </div>
+                        <div class="research-card">
+                            <i class="fas fa-atom"></i>
+                            <h3>Quantum Computing</h3>
+                            <p>Investigating the future of computational systems</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="hobbies.html">Hobbies</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>&copy; 2025 Md. Al Arshad Arafin</p>
+            <p id="info"></p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("info").innerHTML = "Last Modified: " + document.lastModified;
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            
+            const icon = document.querySelector('.theme-switch i');
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-switch i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    </script>
+</body>
+</html>

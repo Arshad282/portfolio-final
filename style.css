@@ -1,0 +1,239 @@
+/* Enhanced Stylish and Colorful Design */
+@import url('https://fonts.googleapis.com/css2?family=Biliner+Meclan&display=swap');
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --header-gradient: linear-gradient(135deg, #343a40, #007bff);
+    --card-bg: white;
+    --border-color: #ddd;
+    --link-color: #007bff;
+    --hover-bg: rgba(0, 123, 255, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e2124;
+    --text-color: #e1e1e1;
+    --header-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+    --card-bg: #2d3236;
+    --border-color: #404040;
+    --link-color: #60a5fa;
+    --hover-bg: rgba(96, 165, 250, 0.1);
+}
+
+/* Dark Mode Toggle */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.theme-switch:hover {
+    transform: scale(1.1);
+}
+
+body {
+    font-family: 'Biliner Meclan', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main Container for Content */
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Header Styling */
+header {
+    background: var(--header-gradient);
+    color: white;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Hero Section Styling */
+.hero {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero img {
+    width: 280px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 5px solid var(--card-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background: var(--header-gradient);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: var(--hover-bg);
+}
+
+tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Footer Styling */
+footer {
+    background: var(--header-gradient);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Styling */
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, var(--link-color), #00bcd4);
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 8px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: linear-gradient(135deg, #00bcd4, var(--link-color));
+    transform: scale(1.05);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00bcd4;
+}
+
+/* Form Elements */
+input, textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--link-color);
+    outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .hero img {
+        width: 280px;
+        height: 200px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .hero img {
+        width: 280px;
+        height: 200px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Md. Al Arshad Arafin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hobby-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .hobby-card {
+            background: var(--hover-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hobby-card i {
+            font-size: 3rem;
+            color: var(--link-color);
+            margin-bottom: 1rem;
+        }
+
+        .hobby-card h3 {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .hobby-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: var(--link-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <button class="theme-switch" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <header>
+            <h1>My Hobbies</h1>
+        </header>
+
+        <main class="content">
+            <section class="hobby-section">
+                <h2 class="section-title">What I Love to Do</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-card">
+                        <i class="fas fa-futbol"></i>
+                        <h3>Playing Football</h3>
+                        <p>I enjoy the competition, teamwork, and strategy involved in the game.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-camera"></i>
+                        <h3>Photography</h3>
+                        <p>Capturing moments and expressing creativity through the lens.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-plane"></i>
+                        <h3>Traveling</h3>
+                        <p>Exploring new places, experiencing different cultures, and trying new cuisines excite me.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Researching Technologies</h3>
+                        <p>I love staying updated with the latest advancements in tech, cybersecurity, and machine learning.</p>
+                    </div>
+                    <div class="hobby-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Making Various Projects</h3>
+                        <p>Experimenting with circuits, IoT, and hardware components is a hands-on way to bring my ideas to life.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Me</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <p>&copy; 2025 Md. Al Arshad Arafin</p>
+            <p id="info"></p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("info").innerHTML = "Last Modified: " + document.lastModified;
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            
+            const icon = document.querySelector('.theme-switch i');
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+
+            localStorage.setItem('theme', newTheme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-switch i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    </script>
+</body>
+</html>

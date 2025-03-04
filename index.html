@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Al Arshad Arafin - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 5px solid var(--link-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            object-fit: cover;
+        }
+
+        .hero h2 {
+            color: var(--link-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-left: 4px solid var(--link-color);
+            background: var(--hover-bg);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--link-color);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .nav-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .nav-btn {
+            background: var(--card-bg);
+            color: var(--link-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn i {
+            font-size: 2rem;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <button class="theme-switch" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <header>
+            <div class="container">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Explore my journey in Computer Science & Engineering at <a href="https://www.bracu.ac.bd/" target="_blank" style="color: white; text-decoration: underline;">BRAC University</a></p>
+            </div>
+        </header>
+        
+        <main class="content">
+            <section class="hero">
+                <img src="myphoto.jpg" alt="Md. Al Arshad Arafin">
+                <h2>Hello, I'm Md. Al Arshad Arafin</h2>
+                <div class="quote">
+                    <p>"In three words I can sum up everything I've learned about life: it goes on."</p>
+                    <p>- Robert Frost</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://discord.gg/cse391" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="mailto:md.alarshad.arafin@g.bracu.ac.bd"><i class="fas fa-envelope"></i></a>
+                </div>
+            </section>
+
+            <nav class="nav-buttons">
+                <a href="about.html" class="nav-btn">
+                    <i class="fas fa-user"></i>
+                    <span>About Me</span>
+                </a>
+                <a href="hobbies.html" class="nav-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>Hobbies</span>
+                </a>
+                <a href="projects.html" class="nav-btn">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="contact.html" class="nav-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </nav>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Md. Al Arshad Arafin | All Rights Reserved</p>
+            <p id="info"></p>
+            <p id="location"></p>
+        </footer>
+    </div>
+
+    <script>
+        // Last modified date
+        document.getElementById("info").innerHTML = "Last Modified: " + document.lastModified;
+        
+        // Location display
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.getElementById("location").innerHTML = 
+                    "Your Location: " + position.coords.latitude.toFixed(2) + "°N, " + 
+                    position.coords.longitude.toFixed(2) + "°E";
+            });
+        }
+
+        // Dark mode toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            
+            const icon = document.querySelector('.theme-switch i');
+            icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Apply saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-switch i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    </script>
+</body>
+</html>
